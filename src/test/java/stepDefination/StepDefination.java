@@ -19,7 +19,9 @@ public class StepDefination {
     public void user_is_on_the_login_page() throws Throwable {
     	System.setProperty("webdriver.chrome.driver", "/Users/abhishekpatel/Desktop/chromedriver");
 		driver = new ChromeDriver();
-    	driver.get("https://www.facebook.com/login"); 
+		//Chrome Driver Opened
+    	driver.get("https://www.facebook.com/login");
+    	//website opened
     }
     
     @When("^User logins in the application with proper username \"([^\"]*)\" and password \"([^\"]*)\"$")
@@ -27,12 +29,14 @@ public class StepDefination {
     	 driver.findElement(By.id("email")).sendKeys(strArg1);
          driver.findElement(By.id("pass")).sendKeys(strArg2);
          driver.findElement(By.id("loginbutton")).click();
+         //Button Succesfully Clicked
     }
     
     @Then("^Home page is populated$")
     public void home_page_is_populated() throws Throwable {
         driver.getCurrentUrl().compareTo("https://www.facebook.com/");
         System.out.println("Sucessfull");
+        //Checking done successfully
     }
     
     @And("^profile is displayed \"([^\"]*)\"$")
@@ -41,6 +45,7 @@ public class StepDefination {
         	driver.findElement(By.cssSelector("a[class='_5afe']")).isDisplayed();
         	}
             System.out.println("Profile Dsiplayed:"+strArg1);
+            //Profile Displayed
         
         
     }
